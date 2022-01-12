@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 
 namespace json_api_test.DTO {
    public class UploadRequest {
-      [Required]
+      [Required(AllowEmptyStrings = false)]
       public string Name {
          get; set;
       }
