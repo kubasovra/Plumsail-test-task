@@ -6,10 +6,10 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/json-api-test.csproj", "src/"]
+COPY ["json-api-test.csproj", "src/"]
 RUN dotnet restore "src/json-api-test.csproj"
-COPY . .
 WORKDIR "/src/src"
+COPY . .
 RUN dotnet build "json-api-test.csproj" -c Release -o /app/build
 
 FROM build AS publish

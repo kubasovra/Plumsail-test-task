@@ -14,7 +14,7 @@ namespace json_api_test.DTO {
       }
 
       [Required]
-      public byte[] File {
+      public string File {
          get; set;
       }
    }

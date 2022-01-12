@@ -19,12 +19,13 @@ namespace json_api_test.Controllers {
          byte[] json;
          try {
             json = Encoding.UTF8.GetBytes(request.Json.ToString());
-         } catch (EncoderFallbackException ex) {
+         }
+         catch(EncoderFallbackException ex) {
             return BadRequest(ex.Message);
          }
 
          var uploadingTasks = new Task<string>[] {
-            _storage.UploadAsync(request.File, name),
+            _storage.UploadAsync(Convert.FromBase64String(request.File), name),
             _storage.UploadAsync(json, $"{name}.json")
          };
 

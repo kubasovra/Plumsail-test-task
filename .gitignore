@@ -264,3 +264,6 @@ __pycache__/
 # Development settings files
 src/web/src/appsettings.Development.json
 src/auth/src/appsettings.Development.json
+
+# Publish profiles
+src/Properties/PublishProfiles/
